@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\begin{section}{Rings}
+
+  \begin{definition}
+    A \emph{binary operation} on a set $S$ is a map $\mu:S \times S \to S$.
+    Similarly, a \emph{unary operation} is a map $\mu:S \to S$.
+  \end{definition}
+
+  \begin{definition}
+    A \emph{semigroup} is a set $S$ with a binary operation $*$ satisfying
+    the associative law:
+    \[
+      a * (b * c) = (a * b) * c \text{\qquad for all } a, b,c \in S
+    \]
+
+    By the definition of the binary operation, the semigroup is closed with
+    respect to the $*$ operator.
+
+  \end{definition}
+
+  \begin{definition} A \emph{group} is a non-empty set $G$ with a binary
+    operation $*$, a unary operation $x \to \bar{x}$ ,
+    and an element $e$, such that:
+
+    \begin{enumerate}
+      \item $G$ is a semigroup with respect to $*$,
+      \item $a * e = e * a = a$ for all $a \in G$, and
+      \item $a * \bar{a} = \bar{a} * a = e$ for all $a \in G$.
+    \end{enumerate}
+
+    $e$ is the identity element of $G$, and $\bar{a}$ is the inverse of $a$.
+
+    If the $*$ operation is commutative, the group is known as an
+    \emph{abelian} group.
+
+  \end{definition}
+
+  \begin{lemma}
+    Both the identity element of a group, and the inverse of a particular
+    element are uniquely determined.
+  \end{lemma}
+
+  \begin{proof}
+    Suppose $e$ is an identity element of a group $G$. Let $a$ be an identity.
+    Then we have $a = ae$, since $e$ is an identity, and because $a$ is an
+    identity, $ae = e$, and so $a = e$, uniquely determined the identity.
+
+    For the second part, let $a^{-1}$ be the inverse of the element $a \in G$,
+    and suppose $b$ is also the inverse of a. Then we have $a * b = e = a *
+    a^{-1}$, and $ a^{-1} * a * b = a^{-1} * a * a^{-1} $, so $ (a^{-1} * a) *
+    b = (a^{-1} * a) * a^{-1} $ and hence $b = a^{-1}$ and the inverse is
+    uniquely determined.
+  \end{proof}
+
+  \begin{definition}
+    A \emph{ring} is a set $R$ equipped with two binary operations connected by
+    distributive laws. $R$ is an abelian group with respect to one binary
+    operation (by convention known as addition and denoted by $+$), and is a
+    semigroup with respect to the other binary operation (called multiplication
+    and denoted by juxtaposition).
+
+    The full set of ring axioms are as follows for a group $G$:
+    \begin{enumerate}
+        \item
+          $ a + b = b + a $ for all $ a, b \in G$,
+        \item
+          $ a + (b + c) = (a + b) + c $ for all $ a, b, c \in G$,
+        \item
+          There is an element $0 \in G$, such that
+          $a + 0 = 0 + a = a$ for all $a \in G$,
+        \item
+          For each $a \in G$, there exists an element $-a$ such that
+          $a + -a = -a + a = 0$,
+
+        \item
+          $ a(bc) = (ab)c $ for all $ a, b, c \in G$,
+
+        \item
+          $ a(b+c) = ab + ac $ for all $ a, b, c \in G$,
+        \item
+          $ (a+b)c = ac + bc $ for all $ a, b, c \in G$,
+
+    \end{enumerate}
+  \end{definition}
+
+\end{section}
+\end{document}
