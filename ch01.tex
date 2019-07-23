@@ -8,7 +8,9 @@
 
 \begin{document}
 
-\begin{section}{Rings}
+\section{Rings}
+
+\subsection{Definitions}
 
   \begin{definition}
     A \emph{binary operation} on a set $S$ is a map $\mu:S \times S \to S$.
@@ -92,5 +94,157 @@
     \end{enumerate}
   \end{definition}
 
-\end{section}
+  \begin{lemma}
+    Some consequences of the ring axioms:
+    \begin{equation}
+      r0 = 0r = 0,
+    \end{equation}
+    \begin{equation}
+      (-r)s = r(-s) = -(rs),
+    \end{equation}
+    \begin{equation}
+      (-r)(-s) = rs.
+    \end{equation}
+    for all $r, s \in R$.
+  \end{lemma}
+
+  \begin{proof}
+    Since $0$ is the additive identity, we have $0 + 0 = 0$,
+    hence $r(0+0) = r0$, and by the left associative law
+    $ r0 + r0 = r0 $, and $r0 + r0 = r0 + 0$. Then by the
+    cancellation law, $r0 = 0$. Similarly, $0r = 0$.
+
+    Then, given $-r$ is the additive inverse of $r$, $r + (-r) = 0$ and so
+    $(r + (-r))s = 0s$, and by the right distributive law and the previous
+    identity, $rs + (-r)s = 0$. Now $rs + -(rs) = 0$, so
+    $rs + (-r)s = rs + -(rs)$ and by the cancellation law, $(-r)s = -(rs)$.
+    Similarly, $r(-s) = -(rs)$.
+
+    By applying (2) repeatedly, we have $(-r)(-s) = -(r(-s)) = --(rs)$.
+    Now, for any $t \in R$, $-t$ is the unique solution to $t + x = 0$.
+    So $(-t) + t = 0$ tells us $--t = t$, and so $(-r)(-s) = rs$.
+  \end{proof}
+
+  \subsection{Special Classes of Rings}
+
+  \begin{definition}
+    A \emph{Commutative Ring} is a ring in which multiplication is commutative,
+    i.e. $ab = ba$ for all $a, b \in R$.
+  \end{definition}
+
+  \begin{definition}
+    A \emph{Ring with Multiplicative Identity} or \emph{Ring with 1} is
+    a ring containing the element $1$, where $1a = a1 = a$ for all
+    $a \in R$.
+  \end{definition}
+
+  Note that the ring $\lbrace 0 \rbrace$ is a ring with 1, and `1' in this case is $0$.
+
+  \begin{lemma}
+    The multiplicative identity in a ring with 1 is uniquely determined
+  \end{lemma}
+  \begin{proof}
+    Let $e$ be the multiplicative identity. Suppose there is an $x \in R$ such
+    that $rx = xr = r$ for all $r \in R$, then $x = ex = e$
+  \end{proof}
+
+  \begin{definition}
+    A \emph{zero-divisor} of a ring $R$ is an element $r \neq 0 \in R$ such
+    that $rs = 0$ for some $s \neq 0 \in R$.
+  \end{definition}
+
+  \begin{definition}
+    An \emph{Integral Domain} is a commutative ring with $1 \neq 0$ and no zero-divisors.
+  \end{definition}
+
+  \begin{lemma}
+    Let $a$ be a non-zero element in an integral domain, and $x, y \in R$.
+    Then $ax = ay \implies x = y$.
+  \end{lemma}
+
+  \begin{proof}
+    If $ax = ay$ for $a \neq 0 \in R$ where $R$ is an integral domain, then
+    $a(x-y) = 0$. Since $R$ has no zero-divisors and $a \neq 0$, $x-y = 0$,
+    and so $x = y$.
+  \end{proof}
+
+  \begin{definition}
+    A \emph{field} is a commutative ring in which the set of non-zero elements
+    forms a group under multiplication.
+  \end{definition}
+
+  \begin{lemma}
+    A field is an integral domain.
+  \end{lemma}
+
+  \begin{proof}
+    We need to show a field $F$ is a ring with $1$, and that there are no zero-divisors.
+
+    Now since the non-zero elements of $F$ form a group under multiplication,
+    there exists an element $1 \in F$ such that $1f = f1 = f$ for all $f \neq 0 \in F$.
+    Since $1 \cdot 0 = 0$ as shown above, $1$ is indeed the multiplicative identity.
+
+    Now suppose $ab = 0$ for some $a, b \in F, a \neq 0$. Since non-zero elements of $F$
+    form a group under multiplication, there exists an element $a^{-1}$ such that
+    $a^{-1}a = 1$. So $a^{-1}ab = a^{-1}0$, hence $b = 0$. Thus $F$ has no zero-divisors.
+  \end{proof}
+
+  \subsection{Examples of rings}
+
+  \subsubsection{$n\mathbb{Z}$}
+  If $n \in \mathbb{Z}$, the set $n\mathbb{Z} = \lbrace a \in \mathbb{Z} : n | a \rbrace$
+  is a commutative ring.
+
+  \subsubsection{$\mathbb{Z}_{n}$}
+  Given $n \in \mathbb{Z}$, define the equivalence relation $\sim$ by
+  \[
+    a \sim b \iff a - b = kn
+  \]
+  for some $k \in \mathbb{Z}$.
+
+  Denote the equivalence class containing $a$ as $[a]$.
+  Then $[0], [1], ..., [n-1]$ is the complete set of equivalence classes with respect
+  to $\sim$. These are called the \emph{congruence classes modulo $n$}, and the set of
+  them is denoted $\mathbb{Z}_{n}$.
+
+  When we define the operators as follows:
+  \begin{align*}
+    [a] + [b] &= [a + b]\\
+    [a][b] &= [ab]
+  \end{align*}
+  we get a commutative ring with $1$. If $n$ is composite, we have zero-divisors, so
+  the ring is not an integral domain, but if $n$ is prime, $\mathbb{Z}_{n}$ is a field.
+
+  \subsubsection{Abelian group with null multiplication}
+  Let $G$ be an Abelian group, and define multiplication as $ab = 0$ for all $a, b \in G$,
+  then it forms a commutative ring.
+
+  \subsubsection{$\mathbb{C}$}
+  The complex numbers form a field under the normal operations. The subrings
+  $\mathbb{R}$ and $\mathbb{Q}$ also form fields, and the subring $\mathbb{Z}$
+  is an integral domain.
+
+  \subsubsection{Gaussian integers}
+  ${a + bi : a, b \in \mathbb{Z}}$ forms an integral domain under the normal operations.
+
+  \subsubsection{Power set}
+  Given a set $S$, its power set is defined as the set of all subsets of $S$,
+  including $S$ and the empty set. Define the operations as
+  \begin{align*}
+    A + B &= (A \cup B) \setminus (A \cap B)\\
+    AB &= A \cap B
+  \end{align*}
+  and we get a commutative ring.
+
+  \subsubsection{$n \times n$ matrices}
+  Let $\mathbf{M}_{n}(\mathbf{k})$ represent the set of $n \times n$ matrices
+  over a field $\mathbf{k}$. The operations are defined the normal way as
+  $(A + B)_{ij} = A_{ij} + B_{ij}$, and $(AB)_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}$,
+  where $A_{ij}$ is the $i$th row and $j$th column of the matrix $A$. Then
+  $\mathbf{M}_{n}(\mathbf{k})$ forms a ring with $1$. Note, it is not commutative
+  when $n > 1$.
+
+
+  %\subsubsection
+
 \end{document}
