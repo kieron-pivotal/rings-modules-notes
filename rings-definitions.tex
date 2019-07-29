@@ -1,23 +1,13 @@
-\documentclass{article}
-\usepackage{amssymb,amsmath,amsthm}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-
-\begin{document}
-
 \section{Rings}
 
 \subsection{Definitions}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{binary operation} on a set $S$ is a map $\mu:S \times S \to S$.
     Similarly, a \emph{unary operation} is a map $\mu:S \to S$.
-  \end{definition}
+  \end{Def}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{semigroup} is a set $S$ with a binary operation $*$ satisfying
     the associative law:
     \[
@@ -27,29 +17,26 @@
     By the definition of the binary operation, the semigroup is closed with
     respect to the $*$ operator.
 
-  \end{definition}
+  \end{Def}
 
-  \begin{definition} A \emph{group} is a non-empty set $G$ with a binary
-    operation $*$, a unary operation $x \to \bar{x}$ ,
+  \begin{Def} A \emph{group} is a non-empty set $G$ with a binary
+    operation $*$, a unary operation $x \to \bar{x}$,
     and an element $e$, such that:
-
     \begin{enumerate}
       \item $G$ is a semigroup with respect to $*$,
       \item $a * e = e * a = a$ for all $a \in G$, and
       \item $a * \bar{a} = \bar{a} * a = e$ for all $a \in G$.
     \end{enumerate}
-
     $e$ is the identity element of $G$, and $\bar{a}$ is the inverse of $a$.
-
     If the $*$ operation is commutative, the group is known as an
-    \emph{abelian} group.
+    \emph{Abelian} group.
 
-  \end{definition}
+  \end{Def}
 
-  \begin{lemma}
+  \begin{Lemma}
     Both the identity element of a group, and the inverse of a particular
     element are uniquely determined.
-  \end{lemma}
+  \end{Lemma}
 
   \begin{proof}
     Suppose $e$ is an identity element of a group $G$. Let $a$ be an identity.
@@ -63,9 +50,9 @@
     uniquely determined.
   \end{proof}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{ring} is a set $R$ equipped with two binary operations connected by
-    distributive laws. $R$ is an abelian group with respect to one binary
+    distributive laws. $R$ is an Abelian group with respect to one binary
     operation (by convention known as addition and denoted by $+$), and is a
     semigroup with respect to the other binary operation (called multiplication
     and denoted by juxtaposition).
@@ -92,21 +79,17 @@
           $ (a+b)c = ac + bc $ for all $ a, b, c \in R$,
 
     \end{enumerate}
-  \end{definition}
+  \end{Def}
 
-  \begin{lemma}
+  \begin{Lemma}
     Some consequences of the ring axioms:
-    \begin{equation}
-      r0 = 0r = 0,
-    \end{equation}
-    \begin{equation}
-      (-r)s = r(-s) = -(rs),
-    \end{equation}
-    \begin{equation}
-      (-r)(-s) = rs.
-    \end{equation}
+    \begin{align}
+      r0 &= 0r = 0,\\
+      (-r)s &= r(-s) = -(rs),\\
+      (-r)(-s) &= rs.
+    \end{align}
     for all $r, s \in R$.
-  \end{lemma}
+  \end{Lemma}
 
   \begin{proof}
     Since $0$ is the additive identity, we have $0 + 0 = 0$,
@@ -127,40 +110,40 @@
 
   \subsection{Special Classes of Rings}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{Commutative Ring} is a ring in which multiplication is commutative,
     i.e. $ab = ba$ for all $a, b \in R$.
-  \end{definition}
+  \end{Def}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{Ring with Multiplicative Identity} or \emph{Ring with 1} is
     a ring containing the element $1$, where $1a = a1 = a$ for all
     $a \in R$.
-  \end{definition}
+  \end{Def}
 
   Note that the ring $\lbrace 0 \rbrace$ is a ring with 1, and `1' in this case is $0$.
 
-  \begin{lemma}
+  \begin{Lemma}
     The multiplicative identity in a ring with 1 is uniquely determined
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     Let $e$ be the multiplicative identity. Suppose there is an $x \in R$ such
     that $rx = xr = r$ for all $r \in R$, then $x = ex = e$
   \end{proof}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{zero-divisor} of a ring $R$ is an element $r \neq 0 \in R$ such
     that $rs = 0$ for some $s \neq 0 \in R$.
-  \end{definition}
+  \end{Def}
 
-  \begin{definition}
+  \begin{Def}
     An \emph{Integral Domain} is a commutative ring with $1 \neq 0$ and no zero-divisors.
-  \end{definition}
+  \end{Def}
 
-  \begin{lemma}
-    Let $a$ be a non-zero element in an integral domain, and $x, y \in R$.
-    Then $ax = ay \implies x = y$.
-  \end{lemma}
+  \begin{Lemma}
+    Let $a$ be a non-zero element in an integral domain, and $x, y \in R$. Then
+    $$ax = ay \implies x = y$$
+  \end{Lemma}
 
   \begin{proof}
     If $ax = ay$ for $a \neq 0 \in R$ where $R$ is an integral domain, then
@@ -168,14 +151,14 @@
     and so $x = y$.
   \end{proof}
 
-  \begin{definition}
+  \begin{Def}
     A \emph{field} is a commutative ring in which the set of non-zero elements
     forms a group under multiplication.
-  \end{definition}
+  \end{Def}
 
-  \begin{lemma}
+  \begin{Lemma}
     A field is an integral domain.
-  \end{lemma}
+  \end{Lemma}
 
   \begin{proof}
     We need to show a field $F$ is a ring with $1$, and that there are no zero-divisors.
@@ -249,4 +232,3 @@
 
   %\subsubsection
 
-\end{document}
