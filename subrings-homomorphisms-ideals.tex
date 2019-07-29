@@ -14,6 +14,24 @@ $a, b \in S$ then $a - b \in S$ and $ab \in S$.
 \end{Lemma}
 
 \begin{proof}
+Let $S$ be a subring of $R$, then $S$ is a group under $+$
+and so is non-empty. If $a, b \in S$, then $-b \in S$, from
+the group additive inverse axiom, and $a + -b \in S$, hence
+$a - b \in S$ as $+$ is a binary operation $+: S \times S \to S$.
+Multiplication is also a binary operation on $S$, and therefore
+if $a, b \in S$ then $ab \in S$ also.
 
+For the sufficiency, we have $S$ is a non-empty subset of $R$,
+and so contains an element $a$. It also contains $a - a = 0$.
+So if $b \in S$, then $0 - b = -b \in S$, and $a - (-b) = a + b
+\in S$.
+
+The commutative and associative laws of addition are consequences
+of those in $R$, since when we add elements of $S$ we do so by
+thinking of them as elements of $R$. Hence $S$ is an Abelian
+group under $+$ with identity element $0$.
+
+The associative law of multiplication and the two distributive
+laws follow in the same way from those in $R$. Hence $S$ is a ring.
 \end{proof}
 
