@@ -42,11 +42,14 @@
 \begin{Def}
   If $A$ is any Abelian group written additively, $a \in A$ and $n \in
   \mathbb{Z}$, then
-  \begin{align*}
-    na &= a + \cdots + a \text{ (with $n$ terms $a$) \qquad if }n > 0\\
-    0a &= 0\\
-    na &= (-n)(-a) = -(a + \cdots + a) \text{ (with $|n|$ terms) \qquad if }n < 0
-  \end{align*}
+  \[
+    na = 
+    \begin{cases}
+      a + \cdots + a \text{ (with $n$ terms $a$),} &\text{if $n > 0$;}\\
+      0, &\text{if $n = 0$;}\\
+      (-n)(-a) = -(a + \cdots + a) \text{ (with $|n|$ terms),} &\text{if $n < 0$.}
+    \end{cases}
+  \]
 
   For $a, b \in A$ and $n, m \in \mathbb{Z}$, we have
   \begin{align*}
