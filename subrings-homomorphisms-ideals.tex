@@ -3,35 +3,101 @@
 \subsection{Subrings}
 
 \begin{Def}
-A \emph{subring} $S$ of a ring $R$ is a subset of $R$
-which is a ring under the operations it inherits from $R$.
+  A \emph{subring} $S$ of a ring $R$ is a subset of $R$ which is a ring under
+  the operations it inherits from $R$.
 \end{Def}
 
 \begin{Lemma}
-Let $S$ be a subset of a ring $R$. Then $S$ is a subring
-of $R$ if and only if (i) $S$ is non-empty, and (ii) whenever
-$a, b \in S$ then $a - b \in S$ and $ab \in S$.
+  Let $S$ be a subset of a ring $R$. Then $S$ is a subring of $R$ if and only
+  if (i) $S$ is non-empty, and (ii) whenever $a, b \in S$ then $a - b \in S$
+  and $ab \in S$.
 \end{Lemma}
 
 \begin{proof}
-Let $S$ be a subring of $R$, then $S$ is a group under $+$
-and so is non-empty. If $a, b \in S$, then $-b \in S$, from
-the group additive inverse axiom, and $a + -b \in S$, hence
-$a - b \in S$ as $+$ is a binary operation $+: S \times S \to S$.
-Multiplication is also a binary operation on $S$, and therefore
-if $a, b \in S$ then $ab \in S$ also.
+  Let $S$ be a subring of $R$, then $S$ is a group under $+$ and so is
+  non-empty. If $a, b \in S$, then $-b \in S$, from the group additive inverse
+  axiom, and $a + -b \in S$, hence $a - b \in S$ as $+$ is a binary operation
+  $+: S \times S \to S$.  Multiplication is also a binary operation on $S$, and
+  therefore if $a, b \in S$ then $ab \in S$ also.
 
-For the sufficiency, we have $S$ is a non-empty subset of $R$,
-and so contains an element $a$. It also contains $a - a = 0$.
-So if $b \in S$, then $0 - b = -b \in S$, and $a - (-b) = a + b
-\in S$.
+  For the sufficiency, we have $S$ is a non-empty subset of $R$, and so
+  contains an element $a$. It also contains $a - a = 0$.  So if $b \in S$, then
+  $0 - b = -b \in S$, and $a - (-b) = a + b \in S$.
 
-The commutative and associative laws of addition are consequences
-of those in $R$, since when we add elements of $S$ we do so by
-thinking of them as elements of $R$. Hence $S$ is an Abelian
-group under $+$ with identity element $0$.
+  The commutative and associative laws of addition are consequences of those in
+  $R$, since when we add elements of $S$ we do so by thinking of them as
+  elements of $R$. Hence $S$ is an Abelian group under $+$ with identity
+  element $0$.
 
-The associative law of multiplication and the two distributive
-laws follow in the same way from those in $R$. Hence $S$ is a ring.
+  The associative law of multiplication and the two distributive laws follow in
+  the same way from those in $R$. Hence $S$ is a ring.
 \end{proof}
 
+\begin{Def}
+  The \emph{additive group} of a ring $R$, denoted by $R^+$, is $R$ with the
+  binary operation of multiplication omitted. Subgroups of $R^+$ are often
+  called \emph{additive subgroups} of $R$.
+\end{Def}
+
+\begin{Def}
+  If $A$ is any Abelian group written additively, $a \in A$ and $n \in
+  \mathbb{Z}$, then
+  \begin{align*}
+    na &= a + \cdots + a \text{ (with $n$ terms $a$) \qquad if }n > 0\\
+    0a &= 0\\
+    na &= (-n)(-a) = -(a + \cdots + a) \text{ (with $|n|$ terms) \qquad if }n < 0
+  \end{align*}
+
+  For $a, b \in A$ and $n, m \in \mathbb{Z}$, we have
+  \begin{align*}
+    n(a+b) &= na + nb,\\
+    (n+m)a &= na + ma,\\
+    (nm)a &= n(ma),\\
+    1a &= a.
+  \end{align*}
+\end{Def}
+
+\begin{Def}
+  Let $S, T$ be arbitrary non-empty subsets of a ring $R$. We define
+  \begin{align*}
+    S + T &= \{ s+t: s \in S, t \in T \}\\
+    ST &= \Bigl\{\sum^{n}_{i = 1} s_i t_i : s_i \in S, t_i \in T, n = 1, 2, \dots \Bigr\} .
+  \end{align*}
+
+\end{Def}
+
+\begin{Lemma}
+  Let $R$ be a ring, and $S, T, U$ be non-empty subsets of R. Then:
+  \begin{enumerate}[label=(\roman*)]
+    \item $(S + T) + U = S + (T + U)$ and $(ST)U = S(TU)$.
+    \item If $S$ and $T$ are additive subgroups of $R$, then so are $S+T$ and
+      $ST$.
+    \item If $S$ and $T$ are subrings of R and R is commutative, then $ST$ is a
+      subring of $R$.
+  \end{enumerate}
+\end{Lemma}
+
+\begin{proof}
+  (i) Additive associativity is given from the associativity of ring operation.
+  Now, since $ST$ consists of all finite sums of elements of the form $st$ with
+  $s \in S$ and $t \in T$, it is closed under addition. Therefore so are $(ST)U$
+  and $S(TU)$. Now, an arbitrary element $z$ of $(ST)U$ is a finte sum of elements
+  of the form $xu$ with $x \in ST$ and $u \in U$. $x$ is a finite sum of elements
+  of the form $st$ with $s \in S$ and $t \in T$, and $z$ is a sum of elements
+  $(st)u$. Since $(st)u = s(tu)$, these elements all belong to $S(TU)$. Since
+  $S(TU)$ is closed under addition, $z \in S(TU)$. Therefore $(ST)U \subseteq
+  S(TU)$ and the reverse inclusion can be established similarly.
+
+  (ii) Let $x, x' \in S + T$. Then $x = s + t, x' = s' + t'$ for some $s, s' \in S$
+  and $t, t' \in T$. Therefore $x - x' = (s - s') + (t - t') \in S + T$ as $S$
+  and $T$ are additive groups. Further $0$ belongs to both $S$ and $T$, and so 
+  $0 = 0 + 0 \in S + T$. Hence $S + T$ is an additive subgroup of $R$.
+
+  Now ST is closed under addition (see above). If $y = \sum s_i t_i \in ST$, then
+  $-y = \sum (-s_i)t_i \in ST$ since $-s_i \in S$. Since $ST$ clearly contains $0$,
+  it is therefore an additive subgroup of $R$.
+
+  (iii) $ST$ is a subgroup of $R$. However $(\sum_i s_i t_i)(\sum_j s'_j t'_j) =
+  \sum_{ij}(s_i s'_j)(t_j t'_j)$, as $R$ is commutative; and this element belongs
+  to $ST$.
+\end{proof}
