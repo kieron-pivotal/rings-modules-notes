@@ -91,7 +91,7 @@
   $S(TU)$ is closed under addition, $z \in S(TU)$. Therefore $(ST)U \subseteq
   S(TU)$ and the reverse inclusion can be established similarly.
 
-  (ii) Let $x, x' \in S + T$. Then $x = s + t, x' = s' + t'$ for some $s, s' \in S$
+  (ii) Let $x, x' \in S + T$. Then $x = s + t$, $x' = s' + t'$ for some $s, s' \in S$
   and $t, t' \in T$. Therefore $x - x' = (s - s') + (t - t') \in S + T$ as $S$
   and $T$ are additive groups. Further $0$ belongs to both $S$ and $T$, and so 
   $0 = 0 + 0 \in S + T$. Hence $S + T$ is an additive subgroup of $R$.
@@ -143,7 +143,7 @@ monomorphisms is a monomorphism.
 \begin{proof}
   Let $\phi : R \to S$ and $\psi : S \to T$ be homomorphisms. Then $\phi(r_1 +
   r_2) = \phi(r_1) + \phi(r_2)$ and $\psi(s_1 + s_2) = \psi(s_1) + \psi(s_2)$
-  for all $r_1, r_2 \in R, s_1, s_2 \in S$.  Now $\phi(r_1) = s_1$ and
+  for all $r_1, r_2 \in R$, $s_1, s_2 \in S$.  Now $\phi(r_1) = s_1$ and
   $\phi(r_2) = s_2$ for some $r_1, r_2 \in R$ and $s_1, s_2 \in S$. So
   $\psi(\phi(r_1 + r_2)) = \psi(\phi(r_1) + \phi(r_2)) = \psi(s_1 + s_2) =
   \psi(s_1) + \psi(s_2) = \psi(\phi(r_1)) + \psi(\phi(r_2))$.  Similarly,
@@ -173,8 +173,8 @@ monomorphisms is a monomorphism.
 \end{Lemma}
 
 \begin{proof}
-  $\phi^{-1}$ exists, since $\phi$ is bijective. If $s, s' \in S$, then $s =
-  \phi(r), s' = \phi(r')$ for some $r, r' \in R$. So $\phi^{-1}(ss') =
+  $\phi^{-1}$ exists, since $\phi$ is bijective.  Now if $s, s' \in S$, then $s =
+  \phi(r)$, $s' = \phi(r')$ for some $r, r' \in R$.  So $\phi^{-1}(ss') =
   \phi^{-1}(\phi(r)\phi(r')) = \phi^{-1}(\phi(rr')) = rr' =
   \phi^{-1}(s)\phi^{-1}(s')$. Similarly $\phi^{-1}(ss') =
   \phi^{-1}(s)\phi^{-1}(s')$.
