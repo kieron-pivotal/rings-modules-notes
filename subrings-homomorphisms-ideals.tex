@@ -104,3 +104,88 @@
   \sum_{ij}(s_i s'_j)(t_j t'_j)$, as $R$ is commutative; and this element belongs
   to $ST$.
 \end{proof}
+
+\subsection{Homomorphisms}
+
+\begin{Def}
+  A \emph{homomorphism} of a ring $R$ into a ring $S$ is a map
+  $\phi : R \to S$ such that
+  \begin{enumerate}[label=(\roman*)]
+    \item $\phi(x+y) = \phi(x) + \phi(y)$, and
+    \item $\phi(xy) = \phi(x) \phi(y)$
+  \end{enumerate}
+  for all $x, y \in R$.
+\end{Def}
+
+By the first rule, $\phi$ is a group homomorphism $R^+ \to S^+$, and so
+$\phi(0_R) = 0_S$ and $\phi(-r) = -\phi(r)$ for all $r \in R$.
+
+\begin{Def}
+  Various names of special ring homomorphisms:
+
+  An \emph{epimorphism} $R \to S$ is a surjective homomorphism.
+
+  A \emph{monomorphism} $R \to S$ is an injective homomorphism.
+
+  An \emph{isomorphism} $R \to S$ is a bijective homomorphism.
+
+  An \emph{endomorphism} $R \to R$ is a homomorphism of $R$ into itself.
+
+  An \emph{automorphism} $R \to R$ is an isomorphism of $R$ into itself.
+\end{Def}
+
+\begin{Lemma}
+The composition of two homomorphisms is a homomorphism; the composition
+of two epimorphisms is an epimorphism; and the composition of two
+monomorphisms is a monomorphism.
+\end{Lemma}
+
+\begin{proof}
+  Let $\phi : R \to S$ and $\psi : S \to T$ be homomorphisms. Then $\phi(r_1 +
+  r_2) = \phi(r_1) + \phi(r_2)$ and $\psi(s_1 + s_2) = \psi(s_1) + \psi(s_2)$
+  for all $r_1, r_2 \in R, s_1, s_2 \in S$.  Now $\phi(r_1) = s_1$ and
+  $\phi(r_2) = s_2$ for some $r_1, r_2 \in R$ and $s_1, s_2 \in S$. So
+  $\psi(\phi(r_1 + r_2)) = \psi(\phi(r_1) + \phi(r_2)) = \psi(s_1 + s_2) =
+  \psi(s_1) + \psi(s_2) = \psi(\phi(r_1)) + \psi(\phi(r_2))$.  Similarly,
+  $\psi(\phi(r_1 r_2)) = \psi(\phi(r_1)) \psi(\phi(r_2))$.
+
+  Now if $\phi$ and $\psi$ are epimorphisms, the image of $\phi$ is $S$, and
+  the image of $\psi$ is $T$. And $\psi \phi : R \to T$ has image $T$ and is
+  therefore also an epimorphism.
+
+  If $\phi$ and $\psi$ are monomorphisms, then $t = \psi(s)$ for some unique $s
+  \in S$, and $s = \phi(r)$ for some unique $r \in R$. Therefore $t = \psi (
+  \phi (r) )$ for some unique $r \in R$ and the composition is a monomorphism.
+\end{proof}
+
+\begin{Cor}
+  The composition of two isomorphisms is an isomorphism, and similarly for
+  automorphisms and endomorphisms.
+\end{Cor}
+
+\begin{proof}
+  This follows immediately from the previous lemma.
+\end{proof}
+
+\begin{Lemma}
+  If $\phi : R \to S$ is an isomorphism, its inverse $\phi^{-1} : S \to R$
+  is also an isomorphism.
+\end{Lemma}
+
+\begin{proof}
+  $\phi^{-1}$ exists, since $\phi$ is bijective. If $s, s' \in S$, then $s =
+  \phi(r), s' = \phi(r')$ for some $r, r' \in R$. So $\phi^{-1}(ss') =
+  \phi^{-1}(\phi(r)\phi(r')) = \phi^{-1}(\phi(rr')) = rr' =
+  \phi^{-1}(s)\phi^{-1}(s')$. Similarly $\phi^{-1}(ss') =
+  \phi^{-1}(s)\phi^{-1}(s')$.
+\end{proof}
+
+\begin{Def}
+  If there exists an isomorphism from $R$ to $S$, we write $R \cong S$
+  and say $R$ is \emph{isomorphic} to $S$.
+\end{Def}
+
+The symbol $\cong$ is an equivalence relation, i.e. (i) $R \cong R$, (ii) $R
+\cong S \implies S \cong R$, (iii) $R \cong S$ and $S \cong T \implies R \cong
+T$.  This can be deduced from the isomorphism discussion above.
+
